@@ -13,6 +13,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 
 const Post = ({ post }) => {
+  console.log("Selected File: ", post.selectedFile);
   return (
     <Card>
       <CardMedia image={post.selectedFile} title={post.title} />
@@ -24,7 +25,7 @@ const Post = ({ post }) => {
       </div>
       <div>
         <Button size="small" onClick={() => {}}>
-          <MoreHorizIcon fontSize="default" />
+          <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
       <div>
