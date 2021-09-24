@@ -12,11 +12,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 
-const Post = ({ post }) => {
-  console.log("Selected File: ", post.selectedFile);
+const Post = ({ post, setCurrentId }) => {
   return (
     <Card>
-      <CardMedia image={post.selectedFile} title={post.title} />
+      <CardMedia
+        style={{ height: 0 }}
+        image={post.selectedFile}
+        title={post.title}
+      />
       <div>
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">
@@ -24,7 +27,12 @@ const Post = ({ post }) => {
         </Typography>
       </div>
       <div>
-        <Button size="small" onClick={() => {}}>
+        <Button
+          size="small"
+          onClick={() => {
+            setCurrentId(post._id);
+          }}
+        >
           <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
